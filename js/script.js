@@ -1,14 +1,17 @@
 const dailyWeatherSection = $("#weather-daily");
 const fiveDayWeatherSection = $("#weather-fiveday");
-const searchBtn = $("button");
+const searchBtn = $("#search-btn");
+const historyCont = $("#search-his");
+const clearBtn = $("#clear-btn");
 
 const apiUrl = "https://api.openweathermap.org/";
 const apiKey = "812c298cb75ccb625e8f2897604e82bb";
 
-function organizeSearchTerm() {
-  let inputValue = $("input").val();
+retrieveSearchHistory()
 
-  console.log(inputValue);
+function organizeSearchTerm(input) {
+
+  let inputValue = input;
 
   inputInfoArr = inputValue.split(", ");
 
@@ -42,14 +45,13 @@ function getCityCoords(searchInfo) {
       
       if (!res.ok) {
         return null;
-      }
+      } 
 
       return res.json();
     })
 
     .then((data) => {
       console.log(data);
-      console.log(typeof data)
       console.log("City coordinates for " + $("input").val() + ":");
       console.log(data[0].lat);
       console.log(data[0].lon);
@@ -60,10 +62,39 @@ function getCityCoords(searchInfo) {
       getDailyWeather(locationLat, locationLon);
       getFiveDayWeather(locationLat, locationLon);
 
+      let locationDataValues = {
+        city: data[0].name,
+        state: data[0].state,
+        country: data[0].country
+      };
+
+      let keyNameData = data[0].name;
+
+      storeSearchHistory(keyNameData, locationDataValues);
+
       return data;
     })
 
     .catch((err) => console.error(err));
+}
+
+function storeSearchHistory(keyNameData, searchData) {
+  localStorage.setItem(keyNameData, JSON.stringify(searchData));
+  return;
+}
+
+function retrieveSearchHistory() {
+  const storageKeys = Object.keys(localStorage);
+    for (let i = 0; i < storageKeys.length; i++) {
+
+      let storedHistoryItems = JSON.parse(localStorage.getItem(storageKeys[i]));
+      console.log("Search History Item:")
+      console.log(storedHistoryItems);
+
+      let historyItem = $("<li>").html(storedHistoryItems.city + ", " + storedHistoryItems.state + ", " + storedHistoryItems.country);
+      historyCont.append(historyItem);
+      historyItem.addClass("history-item");
+    }
 }
 
 function getDailyWeather(lat, lon) {
@@ -100,4 +131,17 @@ function getFiveDayWeather(lat, lon) {
     console.log(data)});
 }
 
-searchBtn.on("click", organizeSearchTerm);
+searchBtn.on("click", function buttonClick() {
+  organizeSearchTerm($("input").val());
+  console.log("Search Item: " + $("input").val());
+})
+
+$(".history-item").on("click", function historyItemClick() {
+  organizeSearchTerm($(this).html());
+  console.log("Search Item: " + $(this).html());
+})
+
+clearBtn.on("click", function removeHistory() {
+    localStorage.clear(), 
+    $("li").remove();
+});
