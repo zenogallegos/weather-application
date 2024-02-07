@@ -68,6 +68,8 @@ function getCityCoords(searchInfo) {
         country: data[0].country
       };
 
+      
+
       let keyNameData = data[0].name;
 
       storeSearchHistory(keyNameData, locationDataValues);

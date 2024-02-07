@@ -41,14 +41,15 @@ main {
 }
 
 #search-bar {
-  height: 30%;
+  height: 40%;
   width: 100%;
-  background-color: rgb(185, 214, 255);
+  background-color: rgb(126, 188, 255);
   box-shadow: -2px 2px 15px 2px rgb(186, 186, 186);
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;;
   gap: 10px;
   padding: 20px;
   border-radius: 10px;
@@ -169,17 +170,57 @@ input:focus::placeholder {
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 #weather-daily {
+  background: linear-gradient(to top, white, rgb(2, 119, 244));;
+  color: rgb(34, 34, 34);
   height: 40%;
-  border: 2px solid;
-  margin: 4px 4px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#weather-daily p {
+  text-align: center;
+  padding: 10px;
+  font-size: 40px;
+  color: white;
+  justify-self: flex-start
+}
+
+#dailyinfo-cont {
+  height: 80%;
+  width: 95%;
+  background-color: white;
+  border-radius: 5px;
+  justify-self: flex-start;
+  align-self: center;
 }
 
 #weather-fiveday {
+  background: linear-gradient(to top, white, rgb(2, 119, 244));;
+  color: rgb(34, 34, 34);
   height: 40%;
-  border: 2px solid;
-  margin: 4px 4px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#weather-fiveday p {
+  text-align: center;
+  padding: 10px;
+  font-size: 40px;
+  color: white;
+  justify-self: flex-start
+}
+
+#fivedayinfo-cont {
+  height: 80%;
+  width: 95%;
+  background-color: white;
+  border-radius: 5px;
+  justify-self: flex-start;
+  align-self: center;
 }
