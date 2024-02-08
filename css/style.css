@@ -12,7 +12,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(to left, white, rgb(2, 119, 244));
+  background: linear-gradient(to left, white, rgb(0, 84, 173));
   height: 10vh;
   min-height: 90px;
 }
@@ -43,14 +43,14 @@ main {
 #search-bar {
   height: 40%;
   width: 100%;
-  background-color: rgb(126, 188, 255);
+  background-color: rgb(23, 80, 140);
   box-shadow: -2px 2px 15px 2px rgb(186, 186, 186);
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;;
-  gap: 10px;
+  gap: 25px;
   padding: 20px;
   border-radius: 10px;
 }
@@ -174,7 +174,7 @@ input:focus::placeholder {
 }
 
 #weather-daily {
-  background: linear-gradient(to top, white, rgb(2, 119, 244));;
+  background: linear-gradient(to top, white, rgb(83, 143, 208));;
   color: rgb(34, 34, 34);
   height: 40%;
   border-radius: 10px;
@@ -200,7 +200,7 @@ input:focus::placeholder {
 }
 
 #weather-fiveday {
-  background: linear-gradient(to top, white, rgb(2, 119, 244));;
+  background: linear-gradient(to top, white, rgb(83, 143, 208));;
   color: rgb(34, 34, 34);
   height: 40%;
   border-radius: 10px;
