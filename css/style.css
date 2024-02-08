@@ -6,6 +6,7 @@
 
 body {
   height: 100vh;
+  overflow-y: scroll;
 }
 
 header {
@@ -173,7 +174,7 @@ input:focus::placeholder {
   gap: 20px;
 }
 
-#weather-daily {
+#dailyweather-cont {
   background: linear-gradient(to top, white, rgb(83, 143, 208));;
   color: rgb(34, 34, 34);
   height: 40%;
@@ -182,7 +183,7 @@ input:focus::placeholder {
   flex-direction: column;
 }
 
-#weather-daily p {
+#dailyweather-cont p {
   text-align: center;
   padding: 10px;
   font-size: 40px;
@@ -197,9 +198,21 @@ input:focus::placeholder {
   border-radius: 5px;
   justify-self: flex-start;
   align-self: center;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
 }
 
-#weather-fiveday {
+/* The current weather information box */
+#current-weather {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(23, 80, 140);
+  border-radius: 5px;
+  box-shadow: -3px 3px 15px 0px rgb(170, 170, 170);
+}
+
+#fivedayweather-cont {
   background: linear-gradient(to top, white, rgb(83, 143, 208));;
   color: rgb(34, 34, 34);
   height: 40%;
@@ -208,7 +221,7 @@ input:focus::placeholder {
   flex-direction: column;
 }
 
-#weather-fiveday p {
+#fivedayweather-cont p {
   text-align: center;
   padding: 10px;
   font-size: 40px;
@@ -217,10 +230,29 @@ input:focus::placeholder {
 }
 
 #fivedayinfo-cont {
-  height: 80%;
+  height: 70%;
   width: 95%;
   background-color: white;
   border-radius: 5px;
   justify-self: flex-start;
   align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* The five-day weather information boxes */
+.day {
+  height: 90%;
+  width: 200px;;
+  background-color: rgb(23, 80, 140);
+  border-radius: 5px;
+  box-shadow: -3px 3px 15px 0px rgb(170, 170, 170);
+  flex-shrink: 0 0; 
+}
+
+.one {
+  
 }

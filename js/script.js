@@ -1,5 +1,5 @@
-const dailyWeatherSection = $("#weather-daily");
-const fiveDayWeatherSection = $("#weather-fiveday");
+const dailyWeatherSection = $("#dailyweather-cont");
+const fiveDayWeatherSection = $("#fivedayweather-cont");
 const searchBtn = $("#search-btn");
 const historyCont = $("#search-his");
 const clearBtn = $("#clear-btn");
@@ -20,6 +20,8 @@ function organizeSearchTerm(input) {
     state: inputInfoArr[1],
     country: inputInfoArr[2],
   };
+
+
 
   console.log(searchInfo);
 
@@ -68,7 +70,7 @@ function getCityCoords(searchInfo) {
         country: data[0].country
       };
 
-      
+
 
       let keyNameData = data[0].name;
 
@@ -130,8 +132,20 @@ function getFiveDayWeather(lat, lon) {
   })
 
   .then((data) => {
-    console.log(data)});
-}
+    console.log(data);
+    populateFiveDay(data)});
+};
+
+function populateFiveDay(data) {
+  let dataArray = data.list;
+
+  for (let i = 3; i < 40; i += 8) {
+    console.log("5-Day Weather:");
+    console.log(dataArray[i]);
+
+    
+  };
+};
 
 searchBtn.on("click", function buttonClick() {
   organizeSearchTerm($("input").val());
