@@ -2,7 +2,7 @@
 
 ## Your Task
 
-Build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+Build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. After entering information into a search bar, the user recieves current and 5-day weather information and the search history is saved below to search field, which can be deleted by a "clear history" button.
 
 ## User Story
 
