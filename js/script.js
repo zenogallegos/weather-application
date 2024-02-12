@@ -12,6 +12,7 @@ const fiveDayWeather = [
   $(".five"),
 ];
 const searchBarCont = $("#search-bar");
+const weatherCont = $("#weather-cont")
 
 const apiUrl = "https://api.openweathermap.org/";
 const apiKey = "812c298cb75ccb625e8f2897604e82bb";
@@ -357,19 +358,26 @@ function populateFiveDay(fiveDayData) {
 }
 
 searchBtn.on("click", function buttonClick() {
+  weatherCont.attr('style', 'display: flex;');
+  searchBarCont.attr('style', 'width: 70%;')
+
   currentWeather.empty();
   for (let i = 0; i < fiveDayWeather.length; i++) {
     fiveDayWeather[i].empty();
-  }
+  };
   organizeSearchTerm($("input").val());
   console.log("Search Item: " + $("input").val());
 });
 
 $(".history-item").on("click", function historyItemClick() {
+  weatherCont.attr('style', 'display: flex;');
+  searchBarCont.attr('style', 'width: 70%;')
+
   currentWeather.empty();
   for (let i = 0; i < fiveDayWeather.length; i++) {
     fiveDayWeather[i].empty();
-  }
+  };
+
   organizeSearchTerm($(this).html());
   console.log("Search Item: " + $(this).html());
 });

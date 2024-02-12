@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: 0.2s;
 }
 
 body {
@@ -25,12 +26,12 @@ h1 {
 }
 
 main {
-  margin-top: 50px;
-  width: 90%;
+  margin: 50px 30px 50px 30px;
+  width: 100%;
   height: 80vh;
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 #search-cont {
@@ -39,7 +40,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20%;
+  width: 30%;
+  transition: 1s;
 }
 
 #search-bar {
@@ -170,16 +172,20 @@ input:focus::placeholder {
 
 #weather-cont {
   width: 70%;
-  display: flex;
+  margin-right: 60px;
+  display: none;
   flex-direction: column;
+  align-items: center;
   gap: 80px;
+  transition: 1s;
 }
 
 #dailyweather-cont {
-  background: linear-gradient(to top, white, rgb(83, 143, 208));;
+  background: linear-gradient(to top, white, rgb(83, 143, 208));
   color: rgb(34, 34, 34);
   height: 40%;
-  border-radius: 10px;
+  width: 70%;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -194,9 +200,9 @@ input:focus::placeholder {
 
 #dailyinfo-cont {
   height: 80%;
-  width: 95%;
+  width: 85%;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   justify-self: flex-start;
   align-self: center;
   display: flex;
@@ -209,9 +215,10 @@ input:focus::placeholder {
   height: 120%;
   width: 90%;
   background-color: rgb(23, 80, 140);
-  border-radius: 5px;
+  border-radius: 12px;
   box-shadow: -3px 3px 15px 0px rgb(170, 170, 170);
   display: flex;
+  text-wrap: wrap;
   flex-direction: column;
 }
 
@@ -256,7 +263,8 @@ input:focus::placeholder {
   background: linear-gradient(to top, white, rgb(83, 143, 208));
   color: rgb(34, 34, 34);
   height: 40%;
-  border-radius: 10px;
+  width: 95%;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -271,9 +279,9 @@ input:focus::placeholder {
 
 #fivedayinfo-cont {
   height: 70%;
-  width: 95%;
+  width: 90%;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   justify-self: flex-start;
   align-self: center;
   display: flex;
@@ -286,10 +294,10 @@ input:focus::placeholder {
 /* The five-day weather information boxes */
 .day {
   height: 120%;
-  width: 250px;;
+  width: 250px;
   background-color: rgb(23, 80, 140);
   color: white;
-  border-radius: 5px;
+  border-radius: 12px;
   box-shadow: -3px 3px 15px 0px rgb(170, 170, 170);
   padding: 25px;
   flex-shrink: 0 0;
