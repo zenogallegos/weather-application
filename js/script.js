@@ -87,6 +87,7 @@ function getCityCoords(searchInfo) {
 
     .catch((err) => {
       console.error(err);
+      alert("Please enter at least a valid city and state in the following format\n(City, State, Country)")
     });
 }
 
@@ -367,6 +368,20 @@ searchBtn.on("click", function buttonClick() {
   };
   organizeSearchTerm($("input").val());
   console.log("Search Item: " + $("input").val());
+});
+
+$(document).on("keypress", function(e){
+  if(e.which == 13){
+    weatherCont.attr('style', 'display: flex;');
+    searchBarCont.attr('style', 'width: 70%;')
+  
+    currentWeather.empty();
+    for (let i = 0; i < fiveDayWeather.length; i++) {
+      fiveDayWeather[i].empty();
+    };
+    organizeSearchTerm($("input").val());
+    console.log("Search Item: " + $("input").val()); 
+  }
 });
 
 $(".history-item").on("click", function historyItemClick() {
